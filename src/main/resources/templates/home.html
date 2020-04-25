@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymleaf.org ">
+<head th:replace="layouts :: header"></head>
+<nav th:replace="layouts :: navbar"></nav>
+<body>
+    <div class="container">
+        <h1><span th:text="${posts.title}">Home</span></h1>
+        <p th:text="${posts.content}">Content</p>
+    </div>
+</body>
+<footer th:replace="layouts :: footer"></footer>
+</html>
