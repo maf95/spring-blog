@@ -6,6 +6,13 @@
     <div class="container">
         <h1><span th:text="${posts.title}">Home</span></h1>
         <p th:text="${posts.content}">Content</p>
+        <hr>
+        <form th:each="post : ${newPosts}">
+            <h1 th:text="${post.title}"></h1>
+            <span th:text="${#strings.abbreviate(post.content,100)}"></span>
+            <a th:href="@{/page(id=${post.title})}">Read more</a>
+        </form>
+
     </div>
 </body>
 <footer th:replace="layouts :: footer"></footer>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymleaf.org ">
+<head th:replace="layouts :: header"></head>
+<nav th:replace="layouts :: navbar"></nav>
+<body>
+    <div class="container">
+        <h1>Compose</h1>
+        <form action="/compose/save" method="post" th:object="${post}">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" th:field="${post.title}">
+            </div>
+
+            <div class="form-group">
+                <label>Post</label>
+                <textarea class="form-control" rows="5" th:field="${post.content}"></textarea>
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit">Publish</button>
+        </form>
+    </div>
+
+</body>
+<footer th:replace="layouts :: footer"></footer>
+</html>
